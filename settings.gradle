@@ -1,0 +1,3 @@
+include 'RetroRCON'
+
+project(":RetroRCON").projectDir = file("RetroRCON")
