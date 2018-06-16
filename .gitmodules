@@ -1,0 +1,3 @@
+[submodule "RetroRCON/src/main/proto"]
+	path = RetroRCON/src/main/proto
+	url = git@github.com:emansom/retrorcon
