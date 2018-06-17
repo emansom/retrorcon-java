@@ -79,6 +79,11 @@ public final class RconProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_RetroRCON_OnlineCountResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RetroRCON_StarterRoomRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RetroRCON_StarterRoomRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -101,33 +106,40 @@ public final class RconProto {
       "st\022\017\n\007user_id\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\"\037\n\014U" +
       "nbanRequest\022\017\n\007user_id\030\001 \001(\r\"%\n\010Response" +
       "\022\n\n\002ok\030\001 \001(\010\022\r\n\005error\030\002 \001(\t\"+\n\023OnlineCou" +
-      "ntResponse\022\024\n\014online_count\030\001 \001(\r2\221\010\n\004Rco" +
-      "n\0225\n\004Ping\022\026.google.protobuf.Empty\032\023.Retr" +
-      "oRCON.Response\"\000\022J\n\016GetOnlineCount\022\026.goo" +
-      "gle.protobuf.Empty\032\036.RetroRCON.OnlineCou" +
-      "ntResponse\"\000\022O\n\021RefreshAppearance\022#.Retr" +
-      "oRCON.RefreshAppearanceRequest\032\023.RetroRC" +
-      "ON.Response\"\000\022G\n\rRefreshBadges\022\037.RetroRC" +
-      "ON.RefreshBadgesRequest\032\023.RetroRCON.Resp" +
-      "onse\"\000\022>\n\rRefreshEvents\022\026.google.protobu" +
-      "f.Empty\032\023.RetroRCON.Response\"\000\022A\n\020Refres" +
-      "hCatalogue\022\026.google.protobuf.Empty\032\023.Ret" +
-      "roRCON.Response\"\000\022<\n\013OpenInfobus\022\026.googl" +
-      "e.protobuf.Empty\032\023.RetroRCON.Response\"\000\022" +
-      "=\n\014CloseInfobus\022\026.google.protobuf.Empty\032" +
-      "\023.RetroRCON.Response\"\000\022?\n\tAlertRoom\022\033.Re" +
-      "troRCON.RoomAlertRequest\032\023.RetroRCON.Res" +
-      "ponse\"\000\022?\n\tAlertUser\022\033.RetroRCON.UserAle" +
-      "rtRequest\032\023.RetroRCON.Response\"\000\022A\n\nAler" +
-      "tHotel\022\034.RetroRCON.HotelAlertRequest\032\023.R" +
-      "etroRCON.Response\"\000\022M\n\014IsUserOnline\022\034.Re" +
-      "troRCON.UserOnlineRequest\032\035.RetroRCON.Us" +
-      "erOnlineResponse\"\000\0224\n\nChangeRoom\022\017.Retro" +
-      "RCON.Room\032\023.RetroRCON.Response\"\000\0224\n\nChan" +
-      "geUser\022\017.RetroRCON.User\032\023.RetroRCON.Resp" +
-      "onse\"\000\0223\n\003Ban\022\025.RetroRCON.BanRequest\032\023.R" +
-      "etroRCON.Response\"\000\0227\n\005Unban\022\027.RetroRCON" +
-      ".UnbanRequest\032\023.RetroRCON.Response\"\000B+\n\034" +
+      "ntResponse\022\024\n\014online_count\030\001 \001(\r\"\312\001\n\022Sta" +
+      "rterRoomRequest\022\017\n\007user_id\030\001 \001(\r\022=\n\005them" +
+      "e\030\002 \001(\0162..RetroRCON.StarterRoomRequest.S" +
+      "tarterRoomTheme\"d\n\020StarterRoomTheme\022\n\n\006O" +
+      "RANGE\020\000\022\017\n\013PURPLE_BLUE\020\001\022\t\n\005BRICK\020\002\022\016\n\nL" +
+      "IGHT_BLUE\020\003\022\010\n\004PINK\020\004\022\016\n\nLIME_GREEN\020\0052\334\010" +
+      "\n\004Rcon\0225\n\004Ping\022\026.google.protobuf.Empty\032\023" +
+      ".RetroRCON.Response\"\000\022J\n\016GetOnlineCount\022" +
+      "\026.google.protobuf.Empty\032\036.RetroRCON.Onli" +
+      "neCountResponse\"\000\022O\n\021RefreshAppearance\022#" +
+      ".RetroRCON.RefreshAppearanceRequest\032\023.Re" +
+      "troRCON.Response\"\000\022G\n\rRefreshBadges\022\037.Re" +
+      "troRCON.RefreshBadgesRequest\032\023.RetroRCON" +
+      ".Response\"\000\022>\n\rRefreshEvents\022\026.google.pr" +
+      "otobuf.Empty\032\023.RetroRCON.Response\"\000\022A\n\020R" +
+      "efreshCatalogue\022\026.google.protobuf.Empty\032" +
+      "\023.RetroRCON.Response\"\000\022<\n\013OpenInfobus\022\026." +
+      "google.protobuf.Empty\032\023.RetroRCON.Respon" +
+      "se\"\000\022=\n\014CloseInfobus\022\026.google.protobuf.E" +
+      "mpty\032\023.RetroRCON.Response\"\000\022?\n\tAlertRoom" +
+      "\022\033.RetroRCON.RoomAlertRequest\032\023.RetroRCO" +
+      "N.Response\"\000\022?\n\tAlertUser\022\033.RetroRCON.Us" +
+      "erAlertRequest\032\023.RetroRCON.Response\"\000\022A\n" +
+      "\nAlertHotel\022\034.RetroRCON.HotelAlertReques" +
+      "t\032\023.RetroRCON.Response\"\000\022M\n\014IsUserOnline" +
+      "\022\034.RetroRCON.UserOnlineRequest\032\035.RetroRC" +
+      "ON.UserOnlineResponse\"\000\0224\n\nChangeRoom\022\017." +
+      "RetroRCON.Room\032\023.RetroRCON.Response\"\000\0224\n" +
+      "\nChangeUser\022\017.RetroRCON.User\032\023.RetroRCON" +
+      ".Response\"\000\0223\n\003Ban\022\025.RetroRCON.BanReques" +
+      "t\032\023.RetroRCON.Response\"\000\0227\n\005Unban\022\027.Retr" +
+      "oRCON.UnbanRequest\032\023.RetroRCON.Response\"" +
+      "\000\022I\n\021CreateStarterRoom\022\035.RetroRCON.Start" +
+      "erRoomRequest\032\023.RetroRCON.Response\"\000B+\n\034" +
       "com.github.emansom.retrorconB\tRconProtoP" +
       "\001b\006proto3"
     };
@@ -222,6 +234,12 @@ public final class RconProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RetroRCON_OnlineCountResponse_descriptor,
         new java.lang.String[] { "OnlineCount", });
+    internal_static_RetroRCON_StarterRoomRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_RetroRCON_StarterRoomRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RetroRCON_StarterRoomRequest_descriptor,
+        new java.lang.String[] { "UserId", "Theme", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

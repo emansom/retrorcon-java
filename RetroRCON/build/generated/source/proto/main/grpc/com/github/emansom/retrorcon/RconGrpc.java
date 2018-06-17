@@ -619,6 +619,43 @@ public final class RconGrpc {
      }
      return getUnbanMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateStarterRoomMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.github.emansom.retrorcon.StarterRoomRequest,
+      com.github.emansom.retrorcon.Response> METHOD_CREATE_STARTER_ROOM = getCreateStarterRoomMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.github.emansom.retrorcon.StarterRoomRequest,
+      com.github.emansom.retrorcon.Response> getCreateStarterRoomMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.github.emansom.retrorcon.StarterRoomRequest,
+      com.github.emansom.retrorcon.Response> getCreateStarterRoomMethod() {
+    return getCreateStarterRoomMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.github.emansom.retrorcon.StarterRoomRequest,
+      com.github.emansom.retrorcon.Response> getCreateStarterRoomMethodHelper() {
+    io.grpc.MethodDescriptor<com.github.emansom.retrorcon.StarterRoomRequest, com.github.emansom.retrorcon.Response> getCreateStarterRoomMethod;
+    if ((getCreateStarterRoomMethod = RconGrpc.getCreateStarterRoomMethod) == null) {
+      synchronized (RconGrpc.class) {
+        if ((getCreateStarterRoomMethod = RconGrpc.getCreateStarterRoomMethod) == null) {
+          RconGrpc.getCreateStarterRoomMethod = getCreateStarterRoomMethod = 
+              io.grpc.MethodDescriptor.<com.github.emansom.retrorcon.StarterRoomRequest, com.github.emansom.retrorcon.Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "RetroRCON.Rcon", "CreateStarterRoom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.github.emansom.retrorcon.StarterRoomRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.github.emansom.retrorcon.Response.getDefaultInstance()))
+                  .setSchemaDescriptor(new RconMethodDescriptorSupplier("CreateStarterRoom"))
+                  .build();
+          }
+        }
+     }
+     return getCreateStarterRoomMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -762,6 +799,13 @@ public final class RconGrpc {
       asyncUnimplementedUnaryCall(getUnbanMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void createStarterRoom(com.github.emansom.retrorcon.StarterRoomRequest request,
+        io.grpc.stub.StreamObserver<com.github.emansom.retrorcon.Response> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateStarterRoomMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -876,6 +920,13 @@ public final class RconGrpc {
                 com.github.emansom.retrorcon.UnbanRequest,
                 com.github.emansom.retrorcon.Response>(
                   this, METHODID_UNBAN)))
+          .addMethod(
+            getCreateStarterRoomMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.github.emansom.retrorcon.StarterRoomRequest,
+                com.github.emansom.retrorcon.Response>(
+                  this, METHODID_CREATE_STARTER_ROOM)))
           .build();
     }
   }
@@ -1028,6 +1079,14 @@ public final class RconGrpc {
       asyncUnaryCall(
           getChannel().newCall(getUnbanMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createStarterRoom(com.github.emansom.retrorcon.StarterRoomRequest request,
+        io.grpc.stub.StreamObserver<com.github.emansom.retrorcon.Response> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateStarterRoomMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1161,6 +1220,13 @@ public final class RconGrpc {
     public com.github.emansom.retrorcon.Response unban(com.github.emansom.retrorcon.UnbanRequest request) {
       return blockingUnaryCall(
           getChannel(), getUnbanMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.github.emansom.retrorcon.Response createStarterRoom(com.github.emansom.retrorcon.StarterRoomRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateStarterRoomMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1312,6 +1378,14 @@ public final class RconGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUnbanMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.github.emansom.retrorcon.Response> createStarterRoom(
+        com.github.emansom.retrorcon.StarterRoomRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateStarterRoomMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PING = 0;
@@ -1330,6 +1404,7 @@ public final class RconGrpc {
   private static final int METHODID_CHANGE_USER = 13;
   private static final int METHODID_BAN = 14;
   private static final int METHODID_UNBAN = 15;
+  private static final int METHODID_CREATE_STARTER_ROOM = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1412,6 +1487,10 @@ public final class RconGrpc {
           serviceImpl.unban((com.github.emansom.retrorcon.UnbanRequest) request,
               (io.grpc.stub.StreamObserver<com.github.emansom.retrorcon.Response>) responseObserver);
           break;
+        case METHODID_CREATE_STARTER_ROOM:
+          serviceImpl.createStarterRoom((com.github.emansom.retrorcon.StarterRoomRequest) request,
+              (io.grpc.stub.StreamObserver<com.github.emansom.retrorcon.Response>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1489,6 +1568,7 @@ public final class RconGrpc {
               .addMethod(getChangeUserMethodHelper())
               .addMethod(getBanMethodHelper())
               .addMethod(getUnbanMethodHelper())
+              .addMethod(getCreateStarterRoomMethodHelper())
               .build();
         }
       }
